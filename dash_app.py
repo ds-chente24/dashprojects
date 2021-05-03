@@ -34,6 +34,7 @@ df_excess = adj_close_df_melt.query('`Percent from 200MA`>=70')
 
 #Create the Dash app
 app = dash.Dash()
+server = app.server
 
 #Setup the app layout
 app.layout = html.Div(children=[
@@ -83,7 +84,5 @@ def update_graph(selected_ticker):
                         height= 350)
     return fig_200MA
 
-#Run local server
-if __name__=='__main__':
-    app.run_server(debug=False)
+
 
